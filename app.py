@@ -1,10 +1,11 @@
 import streamlit as st
 import pandas as pd
-from transformers import BertTokenizer, BertForSequenceClassification
+from transformers import BertTokenizer, BertForSequenceClassification, AdamW
 import torch
+from torch.utils.data import DataLoader, TensorDataset
 
 # Load CSV file
-@st.cache_data
+@st.cache
 def load_data(csv_file):
     return pd.read_csv(csv_file)
 
@@ -23,24 +24,30 @@ def train_model(train_df):
     MAX_LEN = max(len(x) for x in input_ids)
     input_ids = torch.tensor([i + [0]*(MAX_LEN-len(i)) for i in input_ids])
 
+    # Define labels
+    labels = torch.tensor(train_df['Section'].astype('category').cat.codes.values)
+
     # Create attention mask
     attention_mask = torch.tensor([[1] * len(input_ids[0])])
 
-    # Define labels
-    labels = torch.tensor(train_df['Section'].astype('category').cat.codes.values)
+    # Define dataset and dataloader
+    dataset = TensorDataset(input_ids, attention_mask, labels)
+    dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
 
     # Load pre-trained BERT model for sequence classification
     model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=train_df['Section'].nunique())
 
     # Fine-tune BERT model
-    optimizer = torch.optim.AdamW(model.parameters(), lr=1e-5)
+    optimizer = AdamW(model.parameters(), lr=1e-5)
     model.train()
     for epoch in range(3):  # Train for 3 epochs
-        optimizer.zero_grad()
-        outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
-        loss = outputs.loss
-        loss.backward()
-        optimizer.step()
+        for batch in dataloader:
+            batch_input_ids, batch_attention_mask, batch_labels = batch
+            optimizer.zero_grad()
+            outputs = model(input_ids=batch_input_ids, attention_mask=batch_attention_mask, labels=batch_labels)
+            loss = outputs.loss
+            loss.backward()
+            optimizer.step()
 
     return model, tokenizer
 
@@ -61,7 +68,7 @@ def predict(model, tokenizer, train_df, offense):
 st.title("Offense Section and Punishment Predictor")
 
 # Load CSV file
-csv_file_path = "ipc_sections.csv"  # Update with the path to your CSV file
+csv_file_path = "path_to_your_dataset.csv"  # Update with the path to your CSV file
 train_df = load_data(csv_file_path)
 
 # Train model
