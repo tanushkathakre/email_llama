@@ -5,6 +5,10 @@ from transformers import BertTokenizer, BertForSequenceClassification
 import nltk
 from nltk.tokenize import word_tokenize
 
+# Suppress warnings
+import logging
+logging.getLogger("transformers").setLevel(logging.ERROR)
+
 # Download NLTK resources (if not already downloaded)
 nltk.download('punkt')
 
