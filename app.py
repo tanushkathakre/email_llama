@@ -1,12 +1,14 @@
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.pipeline import Pipeline
-from sklearn.compose import ColumnTransformer
 from sklearn.svm import LinearSVC
 import streamlit as st
 
 # Load CSV data
 data = pd.read_csv("ipc_sections.csv", delimiter="\t")
+
+# Check the column names
+st.write("Column Names:", data.columns)
 
 # Preprocess data
 X = data['Offense']
