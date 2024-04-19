@@ -1,7 +1,9 @@
 import streamlit as st
 import pandas as pd
-import torch
-from transformers import pipeline
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, classification_report
+from transformers import DistilBertTokenizer, DistilBertForSequenceClassification, pipeline
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -29,19 +31,35 @@ def preprocess_text(text):
 
 data['Processed_Offense'] = data['Offense'].apply(preprocess_text)
 
+# Encode labels
+label_encoder = LabelEncoder()
+data['Section_Encoded'] = label_encoder.fit_transform(data['Section'])
+
+# Split data
+X_train, X_test, y_train, y_test = train_test_split(data['Processed_Offense'], data['Section_Encoded'], test_size=0.2, random_state=42)
+
+# Load DistilBERT tokenizer and model
+tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased')
+model = DistilBertForSequenceClassification.from_pretrained('distilbert-base-uncased', num_labels=len(label_encoder.classes_))
+
 # Streamlit app
 st.title("IPC Section Prediction and Punishment Recommendation")
 
 # Text input for offense
 offense_input = st.text_input("Enter the offense description:")
 
-# Load the text classification pipeline from Hugging Face
-classifier = pipeline("text-classification", model="nlptown/bert-base-multilingual-uncased-sentiment")
-
 if offense_input:
-    # Prediction
-    predicted_section = classifier(offense_input)[0]['label']
-    predicted_punishment = data[data['Section'] == int(predicted_section)]['Punishment'].iloc[0]
+    # Preprocess input text
+    processed_text = preprocess_text(offense_input)
+    
+    # Tokenize input text
+    inputs = tokenizer(processed_text, padding=True, truncation=True, return_tensors="pt")
+    
+    # Make prediction
+    outputs = model(**inputs)
+    predicted_class = torch.argmax(outputs.logits, dim=1).item()
+    predicted_section = label_encoder.inverse_transform([predicted_class])[0]
+    predicted_punishment = data[data['Section'] == predicted_section]['Punishment'].iloc[0]
     
     st.subheader("Predicted Section:")
     st.write(predicted_section)
