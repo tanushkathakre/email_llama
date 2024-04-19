@@ -1,34 +1,58 @@
-import pandas as pd
 import streamlit as st
+import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.svm import SVC
-from sklearn.pipeline import Pipeline
-from joblib import dump, load
+from sklearn.linear_model import LogisticRegression
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from nltk.stem import WordNetLemmatizer
 
-# Step 1: Data Preprocessing
-df = pd.read_csv("ipc_sections.csv", delimiter="\t")
-X = df["Offense"]
-y = df["Section"]  # Assuming you want to predict the Section based on the offense
+# Download NLTK resources
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
 
-# Step 2: Model Training
-model = Pipeline([
-    ('tfidf', TfidfVectorizer()),
-    ('clf', SVC(kernel='linear'))
-])
+# Load dataset
+data = pd.read_csv("ipc_sections.csv")
+
+# Data preprocessing
+lemmatizer = WordNetLemmatizer()
+stop_words = set(stopwords.words('english'))
+
+def preprocess_text(text):
+    if pd.isnull(text):
+        return ""
+    tokens = word_tokenize(text)
+    tokens = [lemmatizer.lemmatize(token.lower()) for token in tokens if token.isalnum()]
+    tokens = [token for token in tokens if token not in stop_words]
+    return ' '.join(tokens)
+
+data['Processed_Offense'] = data['Offense'].apply(preprocess_text)
+
+# Feature Engineering
+tfidf_vectorizer = TfidfVectorizer()
+X = tfidf_vectorizer.fit_transform(data['Processed_Offense'])
+y = data['Section']
+
+# Model Building
+model = LogisticRegression()
 model.fit(X, y)
 
-# Save the trained model
-dump(model, 'model.joblib')
+# Streamlit app
+st.title("IPC Section Prediction and Punishment Recommendation")
 
-# Step 3: Streamlit App Development
-st.title("Offense Section and Punishment Predictor")
+# Text input for offense
+offense_input = st.text_input("Enter the offense description:")
 
-offense_input = st.text_area("Enter the offense:", "Type your offense here...")
-
-# Step 4: Prediction
-if st.button("Predict"):
-    model = load('model.joblib')
-    predicted_section = model.predict([offense_input])
-    st.write(f"Predicted Section: {predicted_section}")
-
-    # You can implement a similar process to predict punishment based on the predicted section
+if offense_input:
+    # Prediction
+    processed_text = preprocess_text(offense_input)
+    vectorized_text = tfidf_vectorizer.transform([processed_text])
+    predicted_section = model.predict(vectorized_text)[0]
+    predicted_punishment = data[data['Section'] == predicted_section]['Punishment'].iloc[0]
+    
+    st.subheader("Predicted Section:")
+    st.write(predicted_section)
+    
+    st.subheader("Recommended Punishment:")
+    st.write(predicted_punishment)
