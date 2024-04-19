@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
+import torch
+from transformers import pipeline
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -29,27 +29,19 @@ def preprocess_text(text):
 
 data['Processed_Offense'] = data['Offense'].apply(preprocess_text)
 
-# Feature Engineering
-tfidf_vectorizer = TfidfVectorizer()
-X = tfidf_vectorizer.fit_transform(data['Processed_Offense'])
-y = data['Section']
-
-# Model Building
-model = LogisticRegression()
-model.fit(X, y)
-
 # Streamlit app
 st.title("IPC Section Prediction and Punishment Recommendation")
 
 # Text input for offense
 offense_input = st.text_input("Enter the offense description:")
 
+# Load the text classification pipeline from Hugging Face
+classifier = pipeline("text-classification", model="nlptown/bert-base-multilingual-uncased-sentiment")
+
 if offense_input:
     # Prediction
-    processed_text = preprocess_text(offense_input)
-    vectorized_text = tfidf_vectorizer.transform([processed_text])
-    predicted_section = model.predict(vectorized_text)[0]
-    predicted_punishment = data[data['Section'] == predicted_section]['Punishment'].iloc[0]
+    predicted_section = classifier(offense_input)[0]['label']
+    predicted_punishment = data[data['Section'] == int(predicted_section)]['Punishment'].iloc[0]
     
     st.subheader("Predicted Section:")
     st.write(predicted_section)
