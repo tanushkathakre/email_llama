@@ -8,11 +8,13 @@ import torch
 def load_data(csv_file):
     return pd.read_csv(csv_file)
 
-# Train BERT model
 def train_model(train_df):
+    # Remove rows with missing values in the 'Offense' column
+    train_df = train_df.dropna(subset=['Offense'])
+
     # Tokenize input data
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-    tokenized_texts = [tokenizer.tokenize(sent) for sent in train_df['Offense']]
+    tokenized_texts = [tokenizer.tokenize(str(sent)) for sent in train_df['Offense']]  # Convert to string
 
     # Convert tokens to IDs
     input_ids = [tokenizer.convert_tokens_to_ids(x) for x in tokenized_texts]
@@ -38,6 +40,7 @@ def train_model(train_df):
         optimizer.step()
 
     return model, tokenizer
+
 
 # Predict section and punishment
 def predict(model, tokenizer, offense):
