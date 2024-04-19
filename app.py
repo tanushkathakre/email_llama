@@ -28,32 +28,29 @@ data_file_path = "ipc_sections.csv"
 data = load_data(data_file_path)
 
 def predict_section_and_punishment(input_offense, data):
-    input_tokens = word_tokenize(input_offense)
-    input_text = " ".join(input_tokens)
+    max_similarity = 0
+    predicted_section = None
+    predicted_punishment = None
 
-    encoded_input = tokenizer.encode_plus(
-        input_text,
-        add_special_tokens=True,
-        max_length=512,
-        padding="max_length",
-        return_attention_mask=True,
-        return_tensors='pt'
-    )
+    # Tokenize input offense
+    input_tokens = word_tokenize(input_offense.lower())
 
-    with torch.no_grad():
-        outputs = model(**encoded_input)
+    # Iterate over each row in the data
+    for index, row in data.iterrows():
+        # Tokenize offense from the dataset
+        offense_tokens = word_tokenize(row['Offense'].lower())
 
-    predicted_probs = torch.sigmoid(outputs.logits)
-    predicted_probs = predicted_probs.detach().cpu().numpy().flatten()  # Convert to numpy array
+        # Calculate similarity between input offense and offense from the dataset
+        similarity = nltk.jaccard_distance(set(input_tokens), set(offense_tokens))
 
-    # Find the index with the highest probability across all rows
-    predicted_label = np.argmax(predicted_probs)
+        # Update predicted section and punishment if similarity is higher
+        if similarity > max_similarity:
+            max_similarity = similarity
+            predicted_section = row['Section']
+            predicted_punishment = row['Punishment']
 
-    # Get corresponding section and punishment from the row with the highest probability
-    predicted_section = data.loc[predicted_label, 'Section']
-    predicted_punishment = data.loc[predicted_label, 'Punishment']
-    
     return predicted_section, predicted_punishment
+
 
 # Streamlit UI
 st.title("Offense Predictor")
