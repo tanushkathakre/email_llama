@@ -51,34 +51,40 @@ def train_model(train_df):
 
     return model, tokenizer
 
+def save_model(model, tokenizer, path):
+    model.save_pretrained(path)
+    tokenizer.save_pretrained(path)
 
-# Predict section and punishment
-def predict(model, tokenizer, train_df, offense):
-    tokenized_text = tokenizer.tokenize(offense)
-    input_ids = torch.tensor(tokenizer.convert_tokens_to_ids(tokenized_text)).unsqueeze(0)
-    attention_mask = torch.tensor([[1] * len(input_ids[0])])
-    with torch.no_grad():
-        outputs = model(input_ids, attention_mask=attention_mask)
-    predicted_label_idx = torch.argmax(outputs[0]).item()
-    predicted_section = train_df['Section'].cat.categories[predicted_label_idx]
-    predicted_punishment = train_df[train_df['Section'] == predicted_section]['Punishment'].iloc[0]
-    return predicted_section, predicted_punishment
+def load_model(path):
+    model = BertForSequenceClassification.from_pretrained(path)
+    tokenizer = BertTokenizer.from_pretrained(path)
+    return model, tokenizer
 
 # Streamlit UI
 st.title("Offense Section and Punishment Predictor")
 
-# Load CSV file
-csv_file_path = "ipc_sections.csv"  # Update with the path to your CSV file
-train_df = load_data(csv_file_path)
-
-# Train model
-st.write("Training BERT model...")
-model, tokenizer = train_model(train_df)
-st.write("Training complete!")
+# Load or train model
+model_path = "bert_model"
+if st.checkbox("Train model"):
+    csv_file_path = "path_to_your_dataset.csv"  # Update with the path to your CSV file
+    train_df = load_data(csv_file_path)
+    st.write("Training BERT model...")
+    model, tokenizer = train_model(train_df)
+    save_model(model, tokenizer, model_path)
+    st.write("Training complete!")
+else:
+    model, tokenizer = load_model(model_path)
 
 # Prediction
 offense_input = st.text_input("Enter offense details:")
 if offense_input:
-    predicted_section, predicted_punishment = predict(model, tokenizer, train_df, offense_input)
+    tokenized_text = tokenizer.tokenize(offense_input)
+    input_ids = torch.tensor(tokenizer.convert_tokens_to_ids(tokenized_text)).unsqueeze(0)
+    attention_mask = torch.tensor([[1] * len(input_ids[0])])
+    with torch.no_grad():
+        outputs = model(input_ids, attention_mask=attention_mask)
+    predicted_label_idx = torch.argmax(outputs.logits).item()
+    predicted_section = train_df['Section'].cat.categories[predicted_label_idx]
+    predicted_punishment = train_df[train_df['Section'] == predicted_section]['Punishment'].iloc[0]
     st.write("Predicted Section:", predicted_section)
     st.write("Predicted Punishment:", predicted_punishment)
