@@ -6,7 +6,7 @@ from sklearn.svm import SVC
 # Load the CSV file
 @st.cache
 def load_data():
-    df = pd.read_csv("your_csv_file.csv", delimiter="\t")
+    df = pd.read_csv("ipc_sections.csv", delimiter="\t")
     return df
 
 df = load_data()
