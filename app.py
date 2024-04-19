@@ -14,7 +14,7 @@ nltk.download('punkt')
 
 # Load pre-trained BERT tokenizer and model for sequence classification
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=1)
+model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=len(data))
 model.eval()
 
 # Load the CSV file
@@ -47,11 +47,11 @@ def predict_section_and_punishment(input_offense):
     with torch.no_grad():
         outputs = model(**encoded_input)
 
-    # Get predicted probability
-    predicted_prob = torch.sigmoid(outputs.logits).item()
+    # Get predicted probabilities
+    predicted_probs = torch.sigmoid(outputs.logits)
 
-    # Predicted label (0 or 1)
-    predicted_label = 1 if predicted_prob > 0.5 else 0
+    # Find the label with the highest probability
+    predicted_label = predicted_probs.argmax().item()
     
     # Get corresponding section and punishment
     predicted_section = data.loc[predicted_label, 'Section']
