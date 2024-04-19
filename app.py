@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import BertTokenizer, BertForSequenceClassification
 import torch
 import nltk
 from nltk.corpus import stopwords
@@ -38,13 +38,9 @@ data['Section_Encoded'] = label_encoder.fit_transform(data['Section'])
 # Split data
 X_train, X_test, y_train, y_test = train_test_split(data['Processed_Offense'], data['Section_Encoded'], test_size=0.2, random_state=42)
 
-# Load Llama tokenizer and model
-def load_llm():
-    llm_model = AutoModelForCausalLM.from_pretrained("TheBloke/Llama-2-7B-GGML")
-    llm_tokenizer = AutoTokenizer.from_pretrained("TheBloke/Llama-2-7B-GGML")
-    return llm_model, llm_tokenizer
-
-llm_model, llm_tokenizer = load_llm()
+# Load BERT tokenizer and model
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=len(label_encoder.classes_))
 
 # Streamlit app
 st.title("IPC Section Prediction and Punishment Recommendation")
@@ -53,10 +49,20 @@ st.title("IPC Section Prediction and Punishment Recommendation")
 offense_input = st.text_input("Enter the offense description:")
 
 if offense_input:
-    # Generate text using Llama
-    generated_text = llm_tokenizer(offense_input, return_tensors="pt")
-    output = llm_model.generate(**generated_text)
-    predicted_text = llm_tokenizer.decode(output[0], skip_special_tokens=True)
-
-    st.subheader("Predicted Text:")
-    st.write(predicted_text)
+    # Preprocess input text
+    processed_text = preprocess_text(offense_input)
+    
+    # Tokenize input text
+    inputs = tokenizer(processed_text, padding=True, truncation=True, return_tensors="pt")
+    
+    # Make prediction
+    outputs = model(**inputs)
+    predicted_class = torch.argmax(outputs.logits, dim=1).item()
+    predicted_section = label_encoder.inverse_transform([predicted_class])[0]
+    predicted_punishment = data[data['Section'] == predicted_section]['Punishment'].iloc[0]
+    
+    st.subheader("Predicted Section:")
+    st.write(predicted_section)
+    
+    st.subheader("Recommended Punishment:")
+    st.write(predicted_punishment)
