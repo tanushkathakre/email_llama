@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from transformers import GPT2Tokenizer, GPT2ForSequenceClassification
+from transformers.tokenization_utils_base import PaddingStrategy
 import torch
 import nltk
 from nltk.corpus import stopwords
@@ -40,6 +41,8 @@ X_train, X_test, y_train, y_test = train_test_split(data['Processed_Offense'], d
 
 # Load GPT-2 tokenizer and model
 tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
+# Add padding token
+tokenizer.add_special_tokens({'pad_token': '[PAD]'})
 model = GPT2ForSequenceClassification.from_pretrained('gpt2', num_labels=len(label_encoder.classes_))
 
 # Streamlit app
@@ -52,8 +55,8 @@ if offense_input:
     # Preprocess input text
     processed_text = preprocess_text(offense_input)
     
-    # Tokenize input text
-    inputs = tokenizer(processed_text, padding=True, truncation=True, return_tensors="pt")
+    # Tokenize input text and pad sequences
+    inputs = tokenizer(processed_text, padding=True, truncation=True, return_tensors="pt", max_length=512)
     
     # Make prediction
     outputs = model(**inputs)
