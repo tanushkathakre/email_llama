@@ -1,71 +1,71 @@
 import streamlit as st
-from langchain.prompts import PromptTemplate
-from langchain.llms import CTransformers
+import pandas as pd
+from transformers import BertTokenizer, BertForSequenceClassification
+import torch
 
-#Function to get the response back
-def getLLMResponse(form_input,email_sender,email_recipient,email_style):
-    #llm = OpenAI(temperature=.9, model="text-davinci-003")
+# Load CSV file
+@st.cache
+def load_data(csv_file):
+    return pd.read_csv(csv_file)
 
-    # Wrapper for Llama-2-7B-Chat, Running Llama 2 on CPU
+# Train BERT model
+def train_model(train_df):
+    # Tokenize input data
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    tokenized_texts = [tokenizer.tokenize(sent) for sent in train_df['Offense']]
 
-    #Quantization is reducing model precision by converting weights from 16-bit floats to 8-bit integers, 
-    #enabling efficient deployment on resource-limited devices, reducing model size, and maintaining performance.
+    # Convert tokens to IDs
+    input_ids = [tokenizer.convert_tokens_to_ids(x) for x in tokenized_texts]
 
-    #C Transformers offers support for various open-source models, 
-    #among them popular ones like Llama, GPT4All-J, MPT, and Falcon.
+    # Pad input sequences
+    MAX_LEN = max(len(x) for x in input_ids)
+    input_ids = torch.tensor([i + [0]*(MAX_LEN-len(i)) for i in input_ids])
 
+    # Define labels
+    labels = torch.tensor(train_df['Section'].astype('category').cat.codes.values)
 
-    #C Transformers is the Python library that provides bindings for transformer models implemented in C/C++ using the GGML library
+    # Load pre-trained BERT model for sequence classification
+    model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=train_df['Section'].nunique())
 
-    llm = CTransformers(model='models/llama-2-7b-chat.ggmlv3.q8_0.bin',     #https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/tree/main
-                    model_type='llama',
-                    token="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",
-                    config={'max_new_tokens': 256,
-                            'temperature': 0.01})
-    
-    
-    #Template for building the PROMPT
-    template = """
-    Write a email with {style} style and includes topic :{email_topic}.\n\nSender: {sender}\nRecipient: {recipient}
-    \n\nEmail Text:
-    
-    """
+    # Fine-tune BERT model
+    optimizer = torch.optim.AdamW(model.parameters(), lr=1e-5)
+    model.train()
+    for epoch in range(3):  # Train for 3 epochs
+        optimizer.zero_grad()
+        outputs = model(input_ids, labels=labels)
+        loss = outputs.loss
+        loss.backward()
+        optimizer.step()
 
-    #Creating the final PROMPT
-    prompt = PromptTemplate(
-    input_variables=["style","email_topic","sender","recipient"],
-    template=template,)
+    return model, tokenizer
 
-  
-    #Generating the response using LLM
-    response=llm(prompt.format(email_topic=form_input,sender=email_sender,recipient=email_recipient,style=email_style))
-    print(response)
+# Predict section and punishment
+def predict(model, tokenizer, offense):
+    tokenized_text = tokenizer.tokenize(offense)
+    input_ids = torch.tensor(tokenizer.convert_tokens_to_ids(tokenized_text)).unsqueeze(0)
+    with torch.no_grad():
+        outputs = model(input_ids)
+    predicted_label_idx = torch.argmax(outputs[0]).item()
+    predicted_section = train_df['Section'].cat.categories[predicted_label_idx]
+    predicted_punishment = train_df[train_df['Section'] == predicted_section]['Punishment'].iloc[0]
+    return predicted_section, predicted_punishment
 
-    return response
+# Streamlit UI
+st.title("Offense Section and Punishment Predictor")
 
+# Load CSV file
+csv_file = st.file_uploader("Upload CSV file", type=["csv"])
+if csv_file is not None:
+    train_df = load_data(csv_file)
 
-st.set_page_config(page_title="Generate Emails",
-                    page_icon='📧',
-                    layout='centered',
-                    initial_sidebar_state='collapsed')
-st.header("Generate Emails 📧")
+    # Train model
+    st.write("Training BERT model...")
+    model, tokenizer = train_model(train_df)
+    st.write("Training complete!")
 
-form_input = st.text_area('Enter the email topic', height=275)
-
-#Creating columns for the UI - To receive inputs from user
-col1, col2, col3 = st.columns([10, 10, 5])
-with col1:
-    email_sender = st.text_input('Sender Name')
-with col2:
-    email_recipient = st.text_input('Recipient Name')
-with col3:
-    email_style = st.selectbox('Writing Style',
-                                    ('Formal', 'Appreciating', 'Not Satisfied', 'Neutral'),
-                                       index=0)
-
-
-submit = st.button("Generate")
-
-#When 'Generate' button is clicked, execute the below code
-if submit:
-    st.write(getLLMResponse(form_input,email_sender,email_recipient,email_style))
+    # Prediction
+    offense_input = st.text_input("Enter offense details:")
+    if offense_input:
+        predicted_section, predicted_punishment = predict(model, tokenizer, offense_input)
+        st.write("Predicted Section:", predicted_section)
+        st.write("Predicted Punishment:", predicted_punishment)
