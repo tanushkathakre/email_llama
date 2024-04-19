@@ -1,0 +1,445 @@
+Section,Offense,Punishment
+IPC_140,"Wearing the dress or carrying any token used by a soldier, sailor or airman with intent that it may be believed that he is such a soldier, sailor or airman",3 Months or Fine or Both
+IPC_127,Receiving property taken by war or depredation mentioned in sections 125 And 126,7 Years + Fine + forfeiture of property
+IPC_128,Public servant voluntarily allowing prisoner of State or war in his custody to escape,Imprisonment for Life or 10 Years + Fine
+IPC_129,Public servant negligently suffering prisoner of State or war in his custody to escape,Simple Imprisonment 3 Years + Fine
+IPC_130,"Aiding escape of, rescuing or harbouring, such prisoner, or offering Any resistance to the recapture of such prisoner",Imprisonment for Life or 10 Years + Fine
+IPC_131,"Abetting mutiny, or attempting to seduce an officer, soldier sailor or airman from his allegiance or duty",Imprisonment for Life or 10 Years + Fine
+IPC_132,"Abetment of mutiny, if mutiny is committed in consequence thereof",Death or Imprisonment for Life or 10 Years + Fine
+IPC_133,"Abetment of an assault by An officer, soldier, sailor Or airman on his superior officer, when in the execution of his office",3 Years + Fine
+IPC_134,"Abetment of such assault, if the assault is committed",7 Years + Fine
+IPC_135,"Abetment of the desertion of an officer, soldier, sailor or airman",2 Years or Fine or Both
+IPC_136,"Harbouring such an officer, soldier, sailor or airman who has deserted",2 Years or Fine or Both
+IPC_122,"Collecting arms, etc., with The intention of waging War against the Government of India",Imprisonment for Life or 10 Years + Fine
+IPC_137,"Deserter concealed on board merchant vessel, through negligence of master or person in charge thereof",Fine
+IPC_138,"Abetment of act of insubordination by an officer, soldier, sailor or airman, if the offence be committed in consequence",6 Months or Fine or Both
+IPC_121A,Conspiring to commit certain offences against the State,Imprisonment for Life or 10 Years + Fine
+IPC_122,"Collecting arms, etc., with The intention of waging War against the Government of India",Imprisonment for Life or 10 Years + Fine
+IPC_123,Concealing with intent to facilitate a design to wage War,10 Years + Fine
+IPC_124,"Assaulting President, Governor, etc., with intent to compel or restrain the exercise of any lawful power",7 Years + Fine
+IPC_124A,Sedition,Imprisonment for Life + Fine or 3 Years + Fine or Fine
+IPC_125,"Waging war against any Asiatic power in alliance or at peace with the Government of India, or abetting the waging of such war",Imprisonment for Life + Fine or 7 Years + Fine or Fine
+IPC_126,Committing depredation On the territories of any power in alliance or at peace with the Government of India,7 Years + Fine + forfeiture of property
+IPC_140,"Wearing the dress or carrying any token used by a soldier, sailor or airman with intent that it may be believed that he is such a soldier, sailor or airman",3 Months or Fine or Both
+IPC_153,"Wantonly giving provocation with intent to cause riot, If rioting be committed",1 Year or Fine or Both
+IPC_153A,Promoting enmity between classes,3 Years or Fine or Both
+IPC_153AA,Promoting enmity between classes,3 Years or Fine or Both
+IPC_153B,"Imputations, assertions prejudicial to national integration",3 Years or Fine or Both
+IPC_154,"Owner or occupier of land non giving information of riot, etc.",Fine
+IPC_155,Person for whose benefit or on whose behalf a riot takes place not using all lawful means to prevent it,Fine
+IPC_156,Agent of owner or occupier for whose benefit a riot is committed not using all lawful means to prevent it,Fine
+IPC_157,Harbouring persons hired for an unlawful assembly,6 Months or Fine or Both
+IPC_158,Being hired to take part in an unlawful assembly or riot,6 Months or Fine or Both
+IPC_159,Engaging in a public fight and disturbing peace is committing an affray with two or more individuals.,1 Month or Fine or Both
+IPC_145,"Joining or continuing in an unlawful assembly, Knowing that it has been commanded to disperse",2 Years or Fine or Both
+IPC_160,Committing affray,1 Month or Fine or Both
+IPC_161,"Being or expecting to be a public servant, and taking A gratification other than Legal remuneration in respect of an official act",3 Years or Fine or Both
+IPC_162,"Taking a gratification in order, by corrupt or illegal means, to influence a public servant",3 Years or Fine or Both
+IPC_163,Taking a gratification for the exercise of personal influence with a public servant,Simple Imprisonment for 1 Year or Fine or Both
+IPC_164,Abetment by public servant of the offences defined in the last two preceding clauses with reference to himself,3 Years or Fine or Both
+IPC_165,"Public servant obtaining any valuable thing, without consideration, From a person concerned in any proceeding or business transacted by Such public servant",3 Years or Fine or Both
+IPC_165A,Punishment for abetment of offences punishable under section 161 or section 165,3 Years or Fine or Both
+IPC_166,Public servant disobeying a direction of the law with intent to cause injury to any person,Simple Imprisonment for 1 Year or Fine or Both
+IPC_166A,Public servant disobeying direction under law,6 months to 2 years + Fine
+IPC_166B," anyone overseeing a hospital, whether public or private, and breaching the provisions of Section 357C of the Code of Criminal Procedure.",1 Year or Fine or Both
+IPC_146,Rioting,2 Years or Fine or Both
+IPC_167,Public servant framing an incorrect document with intent to cause injury,3 Years or Fine or Both
+IPC_168,Public servant unlawfully engaging in trade,Simple Imprisonment for 1 Year or Fine or Both
+IPC_169,Public servant unlawfully buying or bidding for property,"Simple Imprisonment for 2 Years or Fine or Both and confiscation of property, if purchased"
+IPC_170,Personating a Public servant,2 Years or Fine or Both
+IPC_171,As described,3 Months or Fine or Both
+IPC_171A,"""Candidate"", ""Electoral right"" defined",nan
+IPC_171B,nan,nan
+IPC_171C,nan,nan
+IPC_171D,nan,nan
+IPC_171E,Bribery,"1 Year or Fine or Both, or if treating only, fine only"
+IPC_147,Rioting,2 Years or Fine or Both
+IPC_171F,Undue influence at an election,1 Year or Fine or Both
+IPC_171G,False statement in connection with an election,Fine
+IPC_171H,Illegal payments in connection with elections,Fine
+IPC_171I,Failure to keep election accounts,Fine
+IPC_172,Absconding to avoid service of summons or other proceeding from a public servant,Simple Imprisonment for 1 Month or Fine or Both
+IPC_173,"Preventing the service or The affixing of any summons of notice, or the removal of it when it has been affixed, or preventing a reclamation",Simple Imprisonment for 1 Month or Fine or Both
+IPC_174,"Not obeying a legal order to attend at a certain place in person or by agent, or departing therefrom without authority",Simple Imprisonment for 1 Month or Fine or Both
+IPC_174A,Failure to appear at specified place and specified time as required by a proclamation published under Sub-Section 1 of section 82 of this Code,3 Years or Fine or Both
+IPC_175,Intentionally omitting to produce a document to a public servant by a person legally bound to produce deliver such document,Simple Imprisonment for 1 Month or Fine or Both
+IPC_176,Intentionally omitting to Give notice or information to a public servant by a person legally bound to Give such notice or information,Simple Imprisonment for 1 Month or Fine or Both
+IPC_148,Rioting armed with deadly Weapon,3 Years or Fine or Both
+IPC_177,Knowingly furnishing false information to a public servant,6 Months or Fine or Both
+IPC_178,Refusing oath when duly required to take oath by a public servant,Simple Imprisonment for 6 Months or Fine or Both
+IPC_179,"Being legally bound to state truth, and refusing to answer questions",Simple Imprisonment for 6 Months or Fine or Both
+IPC_180,Refusing to sign statement made to a public servant when legally required to do so,Simple Imprisonment for 3 Months or Fine or Both
+IPC_181,"Knowingly stating to a public servant, on oath as True that which is false",3 Years + Fine
+IPC_182,Giving false information to a public servant in order to cause him to use his lawful power to the injury or annoyance of any person,6 Months or Fine or Both
+IPC_183,Resistance to the taking of property by the lawful authority of a public servant,6 Months or Fine or Both
+IPC_184,Obstructing sale of property offered for sale by authority of a public servant,1 Month or Fine or Both
+IPC_185,"Bidding, by a person under a legal incapacity to purchase it, for property at a lawfully authorized Sale, or bidding without intending to perform the obligations incurred thereby",1 Month or Fine or Both
+IPC_186,Obstructing public servant in discharge of his public functions,3 Months or Fine or Both
+IPC_149,"If an offence be committed by any member of an unlawful assembly, every other member of such assembly shall be guilty of the offence",Same As Offence
+IPC_187,Omission to assist public servant when bound by law to give such assistance,Simple Imprisonment for 1 Month or Fine or Both
+IPC_188,"Disobedience to an order lawfully promulgated by a public servant, If such disobedience causes obstruction, annoyance or injury to persons lawfully employed",Simple Imprisonment for 1 Month or Fine or Both
+IPC_189,"Threatening a public servant with injury to him or one in whom he is interested, to induce him to do or forbear to do any official act",2 Years or Fine or Both
+IPC_190,Threatening any person to induce him to refrain From making a legal application for protection From injury,1 Year or Fine or Both
+IPC_150,"Hiring, engaging or employing persons to Take part in an unlawful assembly",Same as a Member and for Offence by any Member
+IPC_151,Knowingly joining or continuing in any assembly of five or more Persons after it has been commanded to disperse,6 Months or Fine or Both
+IPC_152,"Assaulting or obstructing public servant when suppressing riot, etc.",3 Years or Fine or Both
+IPC_224,Resistance or obstruction by a person to his lawful apprehension,2 Years or Fine or Both
+IPC_225,"Resistance or obstruction to the lawful apprehension of any person, or, rescuing him from lawful custody",2 Years or Fine or Both
+IPC_225A,"Omission to apprehend, or sufferance of escape on part of public servant, in cases not otherwise provided for, In case of intentional omission or sufferance",3 Years or Fine or Both
+IPC_225B,"Resistance or obstruction to lawful apprehension, or escape or rescue in cases not otherwise provided for",6 Months or Fine or Both
+IPC_226,nan,nan
+IPC_191,nan,nan
+IPC_192,nan,nan
+IPC_193,Giving or fabricating false evidence in a judicial proceeding,7 Years + Fine
+IPC_194,Giving or fabricating false evidence with intent to cause any person to be convicted of a capital offence,Imprisonment for Life or Rigorous Imprisonment for 10 Years + Fine
+IPC_195,Giving or fabricating false evidence with intent to procure conviction of an offence punishable with imprisonment for life or with imprisonment for 7 Years or upwards,Same As Offence
+IPC_195A,Threatening any person to give false evidence,7 Years or Fine or Both
+IPC_196,Using in a judicial proceeding evidence known to be false or fabricated,As For False Evidence
+IPC_197,Knowingly issuing or signing a false certificate relating to any fact of which such certificate is by law admissible in evidence,As for False Evidence
+IPC_198,Using as a true certificate one known to be false in a material point,As for False Evidence
+IPC_199,False statement made in any declaration which by law receivable as evidence,As for False Evidence
+IPC_200,Using as true any such declaration known to be false,As for False Evidence
+IPC_201,"Causing disappearance of evidence of an offence committed, or giving false information touching it to screen the offender, If a capital offence",7 Years + Fine
+IPC_202,Intentional omission to give information of an offence by a person legally bound to inform,6 Months or Fine or Both
+IPC_203,Giving false information respecting an offence committed,2 Years or Fine or Both
+IPC_204,Secreting or destroying any document to prevent its production as evidence,2 Years or Fine or Both
+IPC_205,"False personation for the purpose of any act or proceeding in a suit or criminal prosecution, or for becoming bail or security",3 Years or Fine or Both
+IPC_206,"Fraudulent removal or concealment, etc., of property to prevent its seizure as a forfeiture, or in satisfaction of a Fine under sentence, or in execution of a decree",2 Years or Fine or Both
+IPC_207,"Claiming property without right, or practicing deception touching any right to it, to prevent its being taken as a forfeiture or in satisfaction of a Fine under sentence, or in execution of a decree",2 Years or Fine or Both
+IPC_208,"Fraudulently suffering a decree to pass for a sum not due, or suffering decree to be executed after it has been satisfied",2 Years or Fine or Both
+IPC_209,False claim in a court of Justice,2 Years + Fine
+IPC_210,"Fraudulently obtaining a decree for a sum not due, or causing a decree to be executed after it has been satisfied",2 Years or Fine or Both
+IPC_211,False charge of offence made with intent to injure,2 Years or Fine or Both
+IPC_212,"Harbouring an offender, If the offence be capital",5 Years + Fine
+IPC_213,"Taking gift, etc., to screen an offender from punishment, If the offence be capital",7 Years + Fine
+IPC_214,"Offering gift or restoration of property in consideration of screening offender, If the offence be capital",7 Years + Fine
+IPC_215,Taking gift to help to recover movable property of which a person has been deprived by an offence without causing apprehension of offender,2 Years or Fine or Both
+IPC_216,"Harbouring an offender who has escaped from custody, or whose apprehension has been ordered, If the offence be capital",7 Years + Fine
+IPC_216A,Harbouring robbers or dacoits,Rigorous Imprisonment for 7 Years and Fine
+IPC_216B,nan,nan
+IPC_217,"Public servant disobeying a direction of law with intent to save person from punishment, or property from forfeiture",2 Years or Fine or Both
+IPC_218,"Public servant framing an incorrect record or writing with intent to save person from punishment, or property from forfeiture",3 Years or Fine or Both
+IPC_219,"Public servant in a judicial proceeding corruptly Making and pronouncing an order, report, Verdict, or decision which he knows to be contrary to law",7 Years or Fine or Both
+IPC_220,"Commitment for trial or confinement by a person Having authority, who Knows that he is Acting contrary to law",7 Years or Fine or Both
+IPC_221,"Intentional omission to apprehend on the part of a public servant bound by law to apprehend an offender, If the offence be Capital",7 Years with or without Fine
+IPC_222,"Intentional omission to apprehend on the part of A public servant bound by law to apprehend person under sentence of a court of Justice, If under sentence of death",Imprisonment for Life or 14 Years with or without Fine
+IPC_223,Escape from confinement negligently suffered by a public servant,Simple Imprisonment for 2 Years or Fine or Both
+IPC_227,Violation of condition of remission of punishment,"Original Sentence, minus time already served"
+IPC_228,Intentional insult or interruption to a public servant sitting in any stage of a judicial proceeding,Simple Imprisonment for 6 Months or Fine or Both
+IPC_228A,"Disclosure of identity of the victim of certain offences, etc.",2 Years + Fine
+IPC_229,Personation of a juror or assessor,2 Years or Fine or Both
+IPC_229A,Failure by person released on bail or bond to appear in Court,1 Year or Fine or Both
+IPC_230,nan,nan
+IPC_231,"Counterfeiting, or performing any part of the process of counterfeiting coin",7 Years + Fine
+IPC_232,"Counterfeiting, or performing any part of the process of counterfeiting coin",Imprisonment for Life or 10 Years + Fine
+IPC_233,"Making, buying or selling instrument for the purpose of counterfeiting coin",3 Years + Fine
+IPC_234,"Making, buying or selling instrument for the purpose of counterfeiting Indian coin",7 Years + Fine
+IPC_235,Possession of instrument or material for the purpose of using the same for counterfeiting coin,3 Years + Fine
+IPC_236,"Abetting, in India, the counterfeiting, out of India, of coin",The punishment provided for abetting the counterfeiting of such coin within India
+IPC_237,"Import or export of counterfeit coin, knowing the same to be counterfeit",3 Years + Fine
+IPC_238,"Import or export of counterfeit of Indian coin, knowing the same to be counterfeit",Imprisonment for Life or 10 Years + Fine
+IPC_239,"Having any counterfeit coin known to be such when it came into possession, and delivering, etc., the same to any person",5 Years + Fine
+IPC_240,Same with respect to Indian coin,10 Years + Fine
+IPC_241,"Knowingly delivering to another any counterfeit coin as genuine, which, when first possessed, the deliverer did not know to be counterfeit",2 Years or Fine or 10 x Value of Coin or Both
+IPC_242,Possession of counterfeit coin by a person who knew it to be counterfeit when he became possessed thereof,3 Years + Fine
+IPC_243,Possession of Indian coin by a person who knew it to be counterfeit when he became possessed thereof,7 Years + Fine
+IPC_244,Person employed in a Mint causing coin to be of a different weight or composition from that fixed by law,7 Years + Fine
+IPC_245,Unlawfully taking from a Mint any coining instrument,7 Years + Fine
+IPC_246,Fraudulently diminishing the weight or altering the composition of any coin,3 Years + Fine
+IPC_247,Fraudulently diminishing the weight or altering the composition of Indian coin,7 Years + Fine
+IPC_248,Altering appearance of any coin with intent that it shall pass as a coin of a different description,3 Years + Fine
+IPC_249,Altering appearance of Indian coin with intent that it shall pass as a coin of a different description,7 Years + Fine
+IPC_250,Delivery to another of coin possessed with the knowledge that it is altered,5 Years + Fine
+IPC_251,Delivery of Indian coin possessed with the knowledge that it is altered,10 Years + Fine
+IPC_252,Possession of altered coin by a person who knew it to be altered when he became possessed thereof,3 Years + Fine
+IPC_253,Possession of Indian coin by a person who knew it to be altered when he became possessed thereof,5 Years + Fine
+IPC_254,"Delivery to another of coin as genuine which, when first possessed, the deliverer did not know to be altered",2 Years or Fine or 10 x Value of Coin
+IPC_255,Counterfeiting a Government stamp,Imprisonment for Life or 10 Years + Fine
+IPC_256,Having possession of an instrument or material for the purpose of counterfeiting a Government stamp,7 Years + Fine
+IPC_257,"Making, buying or selling instrument for the purpose of counterfeiting a Government stamp",7 Years + Fine
+IPC_258,Sale of counterfeit Government stamp,7 Years + Fine
+IPC_259,Having possession of a counterfeit Government stamp,7 Years + Fine
+IPC_260,Using as genuine a Government stamp known to be counterfeit,7 Years or Fine or Both
+IPC_261,"Effacing any writing from a substance bearing a Government stamp, or removing from a document a stamp used for it, with intent to cause a loss to Government",3 Years or Fine or Both
+IPC_262,Using a Government stamp known to have been before used,2 Years or Fine or Both
+IPC_263,Erasure of mark denoting that stamps have been used,3 Years or Fine or Both
+IPC_263A,Fictitious stamps,Fine
+IPC_264,Fraudulent use of false instrument for weighing,1 Year or Fine or Both
+IPC_265,Fraudulent use of false weight or measure,1 Year or Fine or Both
+IPC_266,Being in possession of false weights or measures for fraudulent use,1 Year or Fine or Both
+IPC_267,Making or selling false weights or measures for fraudulent use,1 Year or Fine or Both
+IPC_268,nan,nan
+IPC_269,Negligently doing any act known to be likely to spread infection of any disease dangerous to life,6 Months or Fine or Both
+IPC_270,Malignantly doing any act known to be likely to spread infection of any disease dangerous to life,2 Years or Fine or Both
+IPC_271,Knowingly disobeying any quarantine rule,6 Months or Fine or Both
+IPC_272,"Adulterating food or drink intended for sale, so as to make the same noxious",6 Months or Fine or Both
+IPC_273,"Selling any food or drink as food and drink, knowing the same to be noxious",6 Months or Fine or Both
+IPC_274,"Adulterating any drug or medical preparation intended for sale so as to lessen its efficacy, or to change its operation, or to make it noxious",6 Months or Fine or Both
+IPC_275,Offering for sale or issuing from a dispensary any drug or medical preparation known to have been adulterated,6 Months or Fine or Both
+IPC_276,Knowingly selling or issuing from a dispensary any drug or medical preparation as a different drug or medical preparation,6 Months or Fine or Both
+IPC_277,Defiling the water of a public spring or reservoir,3 Months or Fine or Both
+IPC_278,Making atmosphere noxious to health,Fine
+IPC_279,"Driving or riding on a public way so rashly or negligently as to endanger human life, etc.",6 Months or Fine or Both
+IPC_280,"Navigating any vessel so rashly or negligently as to endanger human life, etc.",6 Months or Fine or Both
+IPC_281,"Exhibition of a false light, mark or buoy",7 Years or Fine or Both
+IPC_282,"Conveying for hire any person by water, in a vessel in such a state, or so loaded, as to endanger his life",6 Months or Fine or Both
+IPC_283,"Causing danger, obstruction or, injury in any public way or line of navigation",Fine
+IPC_284,"Dealing with any poisonous substance so as to endanger human life, etc.",6 Months or Fine or Both
+IPC_285,"Dealing with fire or any combustible matter so as to endanger human life, etc.",6 Months or Fine or Both
+IPC_286,So dealing with any explosive substance,6 Months or Fine or Both
+IPC_287,So dealing with any machinery,6 Months or Fine or Both
+IPC_288,A person omitting to guard against probable danger to human life by the fall of any building over which he has a right entitling him to pull it down or repair it,6 Months or Fine or Both
+IPC_289,"A person omitting to take order with any animal in his possession, so as to guard against danger to human life, or of grievous hurt, from such animal",6 Months or Fine or Both
+IPC_290,Committing a public nuisance,Fine
+IPC_291,Committing a nuisance after injunction to discontinue,"Simple Imprisonment for 6 Months, or Fine, or Both"
+IPC_292,"Sale, etc., of obscene books, etc.","First conviction 2 Years + Fine, then 5 Years + Fine"
+IPC_293,"Sale etc., of obscene objects to young persons","First conviction 3 Years + Fine, then 7 Years + Fine"
+IPC_294,Obscene Songs,3 Months or Fine or Both
+IPC_294A,Keeping a lottery office,6 Months or Fine or Both
+IPC_295,"Destroying, damaging or defiling a place of worship or sacred object with intent to insult the religion of any class of persons",2 Years or Fine or Both
+IPC_295A,Maliciously insulting the religions or the religious beliefs of any class,3 Years or Fine or Both
+IPC_296,Causing a disturbance to an assembly engaged in religious worship,1 Year or Fine or Both
+IPC_297,"Trespassing in place of worship or sepulchre, disturbing funeral with intention to wound the feeling or to insult the religion of any person, or offering indignity to a human corpse",1 Year or Fine or Both
+IPC_298,"Uttering any word or making any sound in the hearing or making any gesture, or placing any object in the sight of any person, with intention to wound his religious feelings",1 Year or Fine or Both
+IPC_299,nan,nan
+IPC_29A,nan,nan
+IPC_300,nan,nan
+IPC_301,nan,nan
+IPC_302,Murder,Death or Imprisonment for Life + Fine
+IPC_303,Murder by a person under Sentence of imprisonment for life,Death
+IPC_304,"Culpable homicide not amounting to murder, If act by which the death is caused is done with intention of causing death, etc.",Imprisonment for Life or 10 Years + Fine
+IPC_304A,Causing death by rash or negligent act,2 Years or Fine or Both
+IPC_304B,Dowry death,"Imprisonment for not less than 7 Years, but upto Life"
+IPC_305,"Abetment of suicide committed by child or insane or delirious person or an idiot, or a person intoxicated",Death or Imprisonment for Life or 10 Years + Fine
+IPC_306,Abetting the Commission of suicide,10 Years + Fine
+IPC_307,Attempt to murder,10 Years + Fine
+IPC_308,Attempt to commit culpable homicide,3 Years or Fine or Both
+IPC_309,Attempt to commit suicide,Simple Imprisonment for 1 Year or Fine or Both
+IPC_310,nan,nan
+IPC_311,OffencePunishment,Being a thug
+IPC_312,Causing miscarriage,3 Years or Fine or Both
+IPC_313,Causing miscarriage without womanâ€™s consent,Imprisonment for Life or 10 Years + Fine
+IPC_314,Death caused by an act done with intent to cause miscarriage,10 Years + Fine
+IPC_315,"Act done with intent to prevent a child being born alive, or to cause it to die after its birth",10 Years or Fine or Both
+IPC_316,Causing death of a quick unborn child by an act amounting to culpable homicide,10 Years and Fine
+IPC_317,Exposure of a child under 12 Years of age by parent or person having care of it with intention of wholly abandoning it,7 Years or Fine or Both
+IPC_318,Concealment of birth by secret disposal of dead body,2 Years or Fine or Both
+IPC_319,nan,nan
+IPC_320,nan,nan
+IPC_321,nan,nan
+IPC_322,nan,nan
+IPC_323,Voluntarily causing hurt,1 Year or Fine or Both
+IPC_324,Voluntarily causing hurt by dangerous weapons or means,3 Years or Fine or Both
+IPC_325,Voluntarily causing grievous hurt,7 Years + Fine
+IPC_326,Voluntarily causing grievous hurt by dangerous weapons or means,Imprisonment for Life or 10 Years + Fine
+IPC_326A,"Voluntarily causing grievous hurt by use of acid, etc.",10 years to Life + Fine paid to the victim
+IPC_326B,Voluntarily throwing or attempting to throw acid,5 to 7 years + Fine
+IPC_327,"Voluntarily causing hurt to extort property or a valuable security, or to constrain to do anything which is illegal or which may facilitate the commission of an offence",10 Years + Fine
+IPC_328,"Administering stupefying drug with intent to cause hurt, etc.",10 Years + Fine
+IPC_329,"Voluntarily causing grievous hurt to extort property or a valuable security, or to constrain to do anything which is illegal, or which may facilitate the commission of an offence",Imprisonment for Life or 10 Years + Fine
+IPC_330,"Voluntarily causing hurt to extort confession or information of property, etc.",7 Years + Fine
+IPC_331,"Voluntarily causing grievous hurt to extort confession or information or to compel restoration of property, etc.",10 Years + Fine
+IPC_332,Voluntarily causing hurt to deter public servant from his duty,3 Years or Fine or Both
+IPC_333,Voluntarily causing grievous hurt to deter public servant from his duty,10 Years + Fine
+IPC_334,"Voluntarily causing hurt on grave and sudden provocation, not intending to hurt any other than the person who gave the provocation",1 Month or Fine or Both
+IPC_335,"Causing grievous hurt on Grave and sudden provocation, not intending to hurt and other than the person who gave the provocation",4 Years or Fine or Both
+IPC_336,Doing any act which endangers human life or the personal safety of others,3 Months or Fine or Both
+IPC_337,"Causing hurt by an act which endangers human life, etc.",6 Months or Fine or Both
+IPC_338,"Causing grievous hurt by an act which endangers human life, etc.",2 Years or Fine or Both
+IPC_339,nan,nan
+IPC_340,nan,nan
+IPC_341,Wrongfully restraining any person,Simple Imprisonment for 1 Month or Fine or Both
+IPC_342,Wrongfully confining any person,1 Year or Fine or Both
+IPC_343,Wrongfully confining for 3 or more days,2 Years or Fine or Both
+IPC_344,Wrongfully confining for 10 or more days,3 Years + Fine
+IPC_345,"Keeping any person in wrongful confinement, knowing that a writ has been issued for his liberation",2 Years in addition to imprisonment under any other section
+IPC_346,Wrongful confinement in secret,2 Years in addition to imprisonment under any other section
+IPC_347,"Wrongful confinement for the purpose of extorting property, or constraining to an illegal act, etc.",3 Years + Fine
+IPC_348,"Wrongful confinement for the purpose of extorting confession or information, or of compelling restoration of property etc.",3 Years + Fine
+IPC_349,nan,nan
+IPC_350,nan,nan
+IPC_351,nan,nan
+IPC_352,Assault or use of criminal force otherwise than on grave provocation,3 Months or Fine or Both
+IPC_353,Assault or use of criminal force to deter a public servant from discharge of his duty,2 Years or Fine or Both
+IPC_354,Assault or use of criminal force to woman with intent to outrage her modesty,1 to 5 years + Fine
+IPC_354A,Sexual harassment of the nature of unwelcome physical contact and advances or a demand or request for sexual favours or showing pornography,Upto 3 years or Fine or Both
+IPC_354B,Criminal force to woman with intent to disrobe,3 to 7 years + Fine
+IPC_354C,nan,nan
+IPC_354D,Stalking,Upto 3 years + Fine for first conviction
+IPC_355,"Assault or criminal force with intent to dishonour a person, otherwise than on grave and sudden provocation",2 Years or Fine or Both
+IPC_356,Assault or criminal force in attempt to commit theft of property worn or carried by a person,2 Years or Fine or Both
+IPC_357,Assault or use of criminal Force in attempt wrongfully to confine a person,1 Year or Fine or Both
+IPC_358,Assault or use of criminal force on grave and sudden provocation,Simple Imprisonment for 1 Month or Fine or Both
+IPC_359,nan,nan
+IPC_360,nan,nan
+IPC_361,nan,nan
+IPC_362,nan,nan
+IPC_363,Kidnapping,7 Years + Fine
+IPC_363A,Kidnapping or obtaining the custody of a minor in order that such minor may be employed or used for purposes of begging,10 Years + Fine.
+IPC_364,Kidnapping or abducting in order to murder,Imprisonment for Life or Rigorous Imprisonment for 10 Years + Fine
+IPC_364A,"Kidnapping for ransom, etc.",Death or Life + Fine
+IPC_365,Kidnapping or abducting with intent secretly and wrongfully to confine a person,7 Years + Fine
+IPC_366,Kidnapping or abducting a woman to compel her marriage or to cause her defilement etc.,10 Years + Fine
+IPC_366A,Procuration of minor girl,10 Years + Fine
+IPC_366B,Importation of girl from foreign country,10 Years + Fine
+IPC_367,"Kidnapping or abducting in order to subject a person to grievous hurt, slavery, etc.",10 Years + Fine
+IPC_368,Concealing or keeping in confinement a kidnapped person,As for Kidnapping or Abduction
+IPC_369,Kidnapping or abducting a child with intent to take property from the person of such child,7 Years + Fine
+IPC_370,Trafficking of person,7 to 10 years + Fine
+IPC_370A,Exploitation of a trafficked child,5 to 7 years + Fine
+IPC_371,Habitual dealing in slaves,Life or 10 Years + Fine
+IPC_372,"Selling or letting to hire a minor for purposes of prostitution, etc.",10 Years + Fine
+IPC_373,Buying or obtaining possession of a minor for the same purposes,10 Years + Fine
+IPC_374,Unlawful compulsory labour,1 Year or Fine or Both
+IPC_375,nan,nan
+IPC_376,Rape,Rigorous Imprisonment for 10 years to Imprisonment for Life + Fine
+IPC_376A,Person committing an offence of rape and inflicting injury which causes death or causes the woman to be in a persistent vegetative state,Rigorous Imprisonment for 20 years to Imprisonment for Natural-Life or Death
+IPC_376AB,nan,nan
+IPC_376B,Sexual intercourse by husband upon his wife during separation,2 to 7 years + Fine
+IPC_376C,Sexual intercourse by a person in authority,Rigorous Imprisonment for 5 to 10 years + Fine
+IPC_376D,Gang rape,Rigorous Imprisonment for 20 years to Imprisonment for Natural-Life + Fine paid to the victim
+IPC_376DA,nan,nan
+IPC_376DB,nan,nan
+IPC_376E,Repeat offenders,Imprisonment for Natural-Life or Death
+IPC_377,Unnatural offences,Imprisonment for Life or 10 Years + Fine
+IPC_378,nan,nan
+IPC_379,Theft,3 Years or Fine or Both
+IPC_380,"Theft in a building, tent or vessel",7 Years + Fine
+IPC_381,Theft by clerk or servant of property in possession of master or employer,7 Years + Fine
+IPC_382,"Theft, after preparation having been made for causing death, or hurt, or restraint or fear of death, or of hurt or of restraint, in order to the committing of such theft, or to retiring after committing it, or to retaining property taken by it",Rigorous Imprisonment for 10 Years + Fine
+IPC_383,nan,nan
+IPC_384,Extortion,3 Years or Fine or Both
+IPC_385,"Putting or attempting to put in fear of injury, in order to commit extortion",2 Years or Fine or Both
+IPC_386,extortion by putting a person in fear of death or grievous hurt,10 Years + Fine
+IPC_387,Putting or attempting to put a person in fear of death or grievous hurt in order to commit extortion,7 Years + Fine
+IPC_388,"Extortion by threat of accusation of an offence punishable with death, imprisonment for life, or imprisonment for 10 Years.",10 Years + Fine.
+IPC_389,"Putting a person in fear of accusation of an offence punishable with death, imprisonment for life, or imprisonment for 10 Years in order to commit extortion.",10 Years + Fine
+IPC_390,nan,nan
+IPC_391,nan,nan
+IPC_392,Robbery,Rigorous Imprisonment for 10 Years + Fine
+IPC_393,Attempt to commit robbery,Rigorous Imprisonment for 7 Years + Fine
+IPC_394,"Person voluntarily causing hurt in committing or attempting to commit robbery, or any other person jointly concerned in such robbery",Imprisonment for Life or Rigorous Imprisonment for 10 Years + Fine
+IPC_395,Dacoity,Imprisonment for Life or Rigorous Imprisonment for 10 Years + Fine
+IPC_396,Murder in Dacoity,"Death, Imprisonment for Life, or Rigorous Imprisonment for 10 Years + Fine"
+IPC_397,"Robber or Dacoity, with attempt to cause death or grievous hurt",Rigorous Imprisonment for not less than 7 Years
+IPC_398,Attempt to commit robbery or Dacoity when armed with deadly weapons,Rigorous Imprisonment for not less than 7 Years
+IPC_399,Making preparation to commit Dacoity,Rigorous Imprisonment for 10 Years + Fine
+IPC_400,Belonging to a gang of persons associated for the purpose of habitually committing Dacoity,Imprisonment for Life or Rigorous Imprisonment for 10 Years + Fine
+IPC_401,Belonging to a wandering gang of persons associated for the purpose of habitually committing thefts,Rigorous Imprisonment for 7 Years + Fine
+IPC_402,Being one of five or more persons assembled for the purpose of committing Dacoity,Rigorous Imprisonment for 7 Years + Fine
+IPC_403,"Dishonest misappropriation of movable property, or converting it to oneâ€™s own use",2 Years or Fine or Both
+IPC_404,"Dishonest misappropriation of property, knowing that it was in possession of a deceased person at his death, and that it has not since been in the possession of any person legally entitled to it",3 Years + Fine
+IPC_405,nan,nan
+IPC_406,Criminal breach of trust,3 Years or Fine or Both
+IPC_407,"Criminal breach of trust by a carrier, wharfinger, etc.",7 Years + Fine
+IPC_408,Criminal breach of trust by a clerk or servant,7 Years + Fine
+IPC_409,"Criminal breach of trust by public servant or by banker, merchant or agent, etc.",Imprisonment for Life or 10 Years + Fine
+IPC_410,nan,nan
+IPC_411,Dishonestly receiving stolen property knowing it to be stolen,3 Years or Fine or Both
+IPC_412,"Dishonestly receiving stolen property, knowing that it was obtained by Dacoity",Imprisonment for Life or Rigorous Imprisonment for 10 Years + Fine
+IPC_413,Habitually dealing in stolen property,Imprisonment for Life or 10 Years + Fine
+IPC_414,"Assisting in concealment or disposal of stolen property, knowing it to be stolen","3 Years, or Fine, or Both"
+IPC_415,nan,nan
+IPC_416,nan,nan
+IPC_417,Cheating,1 Year or Fine or Both
+IPC_418,"Cheating a person whose interest the offender was bound, either by law or by legal contract, to protect",3 Years or Fine or Both
+IPC_419,Cheating by personation,3 Years or Fine or Both
+IPC_420,"Cheating and there by dishonestly inducing delivery of property, or the making, alteration or destruction of a valuable security",7 Years + Fine
+IPC_421,"Fraudulent removal or concealment of property etc., to prevent distribution among creditors",2 Years or Fine or Both
+IPC_422,Fraudulently preventing from being made available for his creditors a debt or demand due to the offender,2 Years or Fine or Both
+IPC_423,Fraudulent execution of deed of transfer containing a false statement of consideration,2 Years or Fine or Both
+IPC_424,"Fraudulent removal or concealment of property of himself or any other person or assisting in the doing thereof, or dishonestly releasing any demand or claim to which he is entitled",2 Years or Fine or Both
+IPC_425,nan,nan
+IPC_426,Mischief,3 Months or Fine or Both
+IPC_427,"Mischief, and thereby causing damage to the amount of 50 rupees or upwards",2 Years or Fine or Both
+IPC_428,"Mischief by killing, poisoning, maiming or rendering useless any animal of the value of 10 rupees or upwards",2 Years or Fine or Both
+IPC_429,"Mischief by killing poisoning maiming or rendering useless any elephant, camel, horse, etc., whatever may be its value or any other animal of the value of 50 rupees or upwards",5 Years or Fine or Both
+IPC_430,"Mischief by causing diminution of supply of water for agricultural purposes, etc.",5 Years or Fine or Both
+IPC_431,"Mischief by injury to public road, bridge, navigable river, or navigable channel and rendering it impassable or less safe for travelling or conveying property",5 Years or Fine or Both
+IPC_432,Mischief by causing inundation or obstruction to public drainage attended with damage,5 Years or Fine or Both
+IPC_433,"Mischief by destroying or moving or rendering less useful a lighthouse or sea-mark, or by exhibiting false lights",7 Years or Fine or Both
+IPC_434,"Mischief by destroying or moving, etc., a landmark fixed by public authority",1 Year or Fine or Both
+IPC_435,"Mischief by fire or explosive substance with intent to cause damage to an amount of 100 rupees or upwards, or, in case of agricultural produce, 10 rupees or upwards",7 Years + Fine
+IPC_436,Mischief by fire or explosive substance with intent to destroy house etc.,"Imprisonment for Life, or 10 Years + Fine"
+IPC_437,Mischief with intent to destroy or make unsafe A decked vessel or a vessel of 20 tones burden,10 Years + Fine
+IPC_438,The mischief described in the last section when committed by fire or any explosive substance,Imprisonment for Life or 10 Years + Fine
+IPC_439,"Running vessel ashore with intent to commit theft, etc.",10 Years + Fine
+IPC_440,"Mischief committed after preparation made for causing death, or hurt, etc.",5 Years + Fine
+IPC_441,nan,nan
+IPC_442,nan,nan
+IPC_443,nan,nan
+IPC_444,nan,nan
+IPC_445,nan,nan
+IPC_446,nan,nan
+IPC_447,Criminal trespass,3 Months or Fine or Both
+IPC_448,House-trespass,1 Year or Fine or Both
+IPC_449,House-trespass in order to the commission of an offence punishable with death,Imprisonment for Life or Rigorous Imprisonment for 10 Years + Fine
+IPC_450,House-trespass in order to the commission of an Offence punishable with imprisonment for life,10 Years + Fine
+IPC_451,House-trespass in order to the commission of an Offence punishable with imprisonment,2 Years + Fine
+IPC_452,"House-trespass, having made preparation for causing hurt, assault, etc.",7 Years + Fine
+IPC_453,Lurking house trespass or house-breaking,2 Years + Fine
+IPC_454,Lurking house-trespass or house-breaking in order to the commission of an offence punishable with imprisonment,3 Years + Fine
+IPC_455,"Lurking house-trespass or house-breaking after preparation made for causing hurt, assault, etc.",10 Years + Fine
+IPC_456,Lurking house-trespass or house-breaking by night,3 Years + Fine
+IPC_457,Lurking house-trespass or house-breaking by night in order to the commission of an offence punishable with imprisonment,5 Years + Fine
+IPC_458,"Lurking house-trespass or house-breaking by night, after preparation made for causing hurt, etc.",14 Years + Fine
+IPC_459,Grievous hurt caused whilst committing lurking house-trespass or house-breaking,Imprisonment for Life or 10 Years + Fine
+IPC_460,"Death or grievous hurt caused by one of several persons jointly concerned in house-breaking by Night, etc.",Imprisonment for Life or 10 Years + Fine
+IPC_461,Dishonestly breaking Open or unfastening any closed receptacle containing or supposed to contain property,2 Years or Fine or Both
+IPC_462,"Being entrusted with any closed receptacle containing or supposed to contain any property, and fraudulently opening the same",3 Years or Fine or Both
+IPC_463,nan,nan
+IPC_464,nan,nan
+IPC_465,Forgery,2 Years or Fine or Both
+IPC_466,"Forgery of a record of a court of Justice or of a Registrar of Births, etc., kept by a public servant",7 Years + Fine
+IPC_467,"Forgery of a valuable security, will or authority to make or transfer any valuable security, or to receive any money, etc.",Imprisonment for Life or 10 Years + Fine
+IPC_468,Forgery for the purpose of cheating,7 Years + Fine
+IPC_469,Forgery for the purpose of harming the reputation of any person or knowing that it is likely to be used for that purpose,3 Years + Fine
+IPC_470,nan,nan
+IPC_471,Using as genuine a forged document which is known to be forged,Same as for Forgery of such document
+IPC_472,"Making or counterfeiting a seal, plate, etc., with intent to commit a forgery punishable under section 467 of the Indian Penal Code, or possessing with like intent any such seal, plate, etc. knowing the same to be counterfeit",Imprisonment for Life or 7 Years + Fine
+IPC_473,"Making or counterfeiting a seal, plate, etc., with intent to commit a forgery punishable otherwise than under section 467 of the Indian Penal Code, or possessing with like intent any such seal plate, etc., knowing the same to be counterfeit",7 Years + Fine
+IPC_474,"Having possession of a document, knowing it to be forged, with intent to use it as genuine; If the document is one of the description mentioned in section 466 of the Indian Penal Code",7 Years + Fine
+IPC_475,"Counterfeiting a device or mark used for authenticating documents described in section 467 of the Indian Penal Code, or possessing counterfeit marked material",Imprisonment for Life or 7 Years + Fine
+IPC_476,"Counterfeiting a device or mark used for authenticating documents other than those described in section 467 of the Indian Penal Code, or possessing counterfeit marked material",7 Years + Fine
+IPC_477,"Fraudulently destroying or defacing, or attempting to destroy or deface, or secreting, a will, etc.",Imprisonment for Life or 7 Years + Fine
+IPC_477A,Falsification of accounts,7 Years or Fine or Both
+IPC_478,nan,nan
+IPC_479,nan,nan
+IPC_480,nan,nan
+IPC_481,nan,nan
+IPC_482,Using a false property mark with intent to deceive or injure any person,1 Year or Fine or Both
+IPC_483,"Counterfeiting a property mark used by another, with intent to cause damage or injury",2 Years or Fine or Both
+IPC_484,"Counterfeiting a property mark used by a public servant, or any mark used by him to denote the manufacture, quality, etc., of any property",3 Years + Fine
+IPC_485,"Fraudulently making or having possession of any die, plate or other instrument for counterfeiting any public or private property mark",3 Years or Fine or Both
+IPC_486,Knowingly selling goods marked with a counterfeit property mark,1 Year or Fine or Both
+IPC_487,"Fraudulently marking a false mark upon any package or receptacle containing goods, with intent to cause it to be believed that it contains goods which it does not contain, etc.",3 Years or Fine or Both
+IPC_488,Making use of any such false mark,3 Years or Fine or Both
+IPC_489,Removing destroying or defacing property mark with intent to cause injury,1 Year or Fine or Both
+IPC_489A,Counterfeiting currency-notes or bank-notes,Imprisonment for Life or 10 Years + Fine
+IPC_489B,Using as genuine forged or counterfeit currency-notes or bank-notes,Imprisonment for Life or 10 Years + Fine
+IPC_489C,Possession of forged or counterfeit currency-notes or bank-notes,7 Years or Fine or Both
+IPC_489D,"Making or possessing machinery, instrument or material for forging or counterfeiting currency-notes or bank-notes",Imprisonment for Life or 10 Years + Fine
+IPC_489E,Making or using documents resembling currency-notes or bank-notes,Fine
+IPC_490,On refusal to disclose the name and address of the printer,Fine
+IPC_491,"Being bound to attend on or supply the wants of a person who is helpless from youth, unsoundness of mind or disease, and voluntarily omitting to do so",3 Months or Fine or Both
+IPC_492,nan,nan
+IPC_493,A man by deceit causing a woman not lawfully married to him to believe that she is lawfully married to him and to cohabit with him in that belief,10 Years + Fine
+IPC_494,Marrying again during the life-time of a husband or wife,7 Years + Fine
+IPC_495,Same offence with concealment of the former marriage from the person with whom subsequent marriage is contracted,10 Years + Fine
+IPC_496,A person with fraudulent intention going through the ceremony of being married knowing that he is not thereby lawfully married,7 Years + Fine
+IPC_497,Adultery,5 Years or Fine or Both
+IPC_498,Enticing or taking away or detaining with a criminal intent a married woman,2 Years and Fine
+IPC_498A,Punishment for subjecting a married woman to Cruelty,3 Years + Fine
+IPC_499,nan,nan
+IPC_500,Defamation against the President or the Vice-president or the Governor of a State or Administrator of a Union Territory or a Minister in respect of his conduct in the discharge of his public functions when instituted upon a complaint made by the Public Prosecutor,Simple Imprisonment for 2 Years or Fine or Both
+IPC_501,Printing or engraving matter knowing it to be defamatory against the President or the Vice-President or the Governor of a State or Administrator of a Union territory or a Minister in respect of his conduct in the discharge of his public functions when instituted upon a complaint made by the Public Prosecutor,Simple Imprisonment for 2 Years or Fine or Both
+IPC_502,"Sale of printed or engraved substance containing defamatory matter, knowing it to contain such matter against the President or the Vice-President or the Governor of a State or Administrator of a Union territory or a Minister in respect of his conduct in the discharge of his public functions when instituted upon a complaint made by the Public Prosecutor",Simple Imprisonment for 2 Years or Fine or Both
+IPC_503,nan,nan
+IPC_504,Insult intended to provoke breach of the peace,2 Years or Fine or Both
+IPC_505,"False statement, rumour, etc., circulated with intent to cause mutiny or offence against the public peace",3 Years or Fine or Both
+IPC_506,Criminal intimidation,2 Years or Fine or Both
+IPC_507,Criminal intimidation by Anonymous communication or having taken precaution to conceal whence the threat comes,As in Section 506 + 2 Years
+IPC_508,Act caused by inducing a person to believe that he will be rendered an object of Divine displeasure,1 Year or Fine or Both
+IPC_509,"Uttering any word or making any gesture intended to insult the modesty of a woman, etc.",Simple imprisonment for 3 years + Fine
+IPC_510,"Appearing in a public Place, etc., in a State of intoxication, and causing annoyance to any person",Simple Imprisonment for 24 hours or Fine or Both
+IPC_511,"Attempting to commit offences punishable with imprisonment for life, or imprisonment, and in such attempt doing any act towards the commission of the offence","Imprisonment for Life or Imprisonment not exceeding, half of the longest term provided for the Offence, or Fine, or Both"
