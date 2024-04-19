@@ -1,66 +1,50 @@
 import streamlit as st
 import pandas as pd
-import torch
-from transformers import BertTokenizer, BertForSequenceClassification
-import nltk
-from nltk.tokenize import word_tokenize
-import numpy as np
-
-# Suppress warnings
-import logging
-logging.getLogger("transformers").setLevel(logging.ERROR)
-
-# Download NLTK resources (if not already downloaded)
-nltk.download('punkt')
-
-# Load pre-trained BERT tokenizer and model for sequence classification
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=1)
-model.eval()
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.svm import SVC
 
 # Load the CSV file
 @st.cache
-def load_data(file_path):
-    data = pd.read_csv(file_path)
-    return data
+def load_data():
+    df = pd.read_csv("your_csv_file.csv", delimiter="\t")
+    return df
 
-data_file_path = "ipc_sections.csv"
-data = load_data(data_file_path)
+df = load_data()
 
-def predict_section_and_punishment(input_offense, data):
-    max_similarity = 0
-    predicted_section = None
-    predicted_punishment = None
+# Separate features (offense) and labels (section and punishment)
+X = df['Offense']
+y_section = df['Section']
+y_punishment = df['Punishment']
 
-    # Tokenize input offense
-    input_tokens = word_tokenize(str(input_offense).lower())
+# Vectorize the text data
+vectorizer = TfidfVectorizer(max_features=1000)  # You can adjust max_features as needed
+X_vectorized = vectorizer.fit_transform(X)
 
-    # Iterate over each row in the data
-    for index, row in data.iterrows():
-        # Tokenize offense from the dataset
-        offense_tokens = word_tokenize(str(row['Offense']).lower())
+# Train SVM classifiers
+svm_section = SVC(kernel='linear')
+svm_section.fit(X_vectorized, y_section)
 
-        # Calculate similarity between input offense and offense from the dataset
-        similarity = nltk.jaccard_distance(set(input_tokens), set(offense_tokens))
+svm_punishment = SVC(kernel='linear')
+svm_punishment.fit(X_vectorized, y_punishment)
 
-        # Update predicted section and punishment if similarity is higher
-        if similarity > max_similarity:
-            max_similarity = similarity
-            predicted_section = row['Section']
-            predicted_punishment = row['Punishment']
+# Streamlit app
+st.title("Offense Section and Punishment Predictor")
 
+# Input text box for entering the offense
+offense_input = st.text_input("Enter the offense:")
+
+# Function to predict section and punishment
+def predict(offense):
+    text_vectorized = vectorizer.transform([offense])
+    predicted_section = svm_section.predict(text_vectorized)[0]
+    predicted_punishment = svm_punishment.predict(text_vectorized)[0]
     return predicted_section, predicted_punishment
 
-
-
-# Streamlit UI
-st.title("Offense Predictor")
-
-input_offense = st.text_input("Enter offense details:")
+# Prediction
 if st.button("Predict"):
-    if input_offense:
-        predicted_section, predicted_punishment = predict_section_and_punishment(input_offense, data)
+    if offense_input:
+        predicted_section, predicted_punishment = predict(offense_input)
         st.write("Predicted Section:", predicted_section)
         st.write("Predicted Punishment:", predicted_punishment)
     else:
-        st.warning("Please enter offense details!")
+        st.warning("Please enter an offense.")
