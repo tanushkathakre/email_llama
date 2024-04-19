@@ -6,7 +6,7 @@ from sklearn.svm import LinearSVC
 import streamlit as st
 
 # Load CSV data
-data = pd.read_csv("data.csv", delimiter="\t")
+data = pd.read_csv("ipc_sections.csv", delimiter="\t")
 
 # Preprocess data
 X = data['Offense']
