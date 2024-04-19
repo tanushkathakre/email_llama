@@ -66,7 +66,7 @@ st.title("Offense Section and Punishment Predictor")
 # Load or train model
 model_path = "bert_model"
 if st.checkbox("Train model"):
-    csv_file_path = "path_to_your_dataset.csv"  # Update with the path to your CSV file
+    csv_file_path = "ipc_sections.csv"  # Update with the path to your CSV file
     train_df = load_data(csv_file_path)
     st.write("Training BERT model...")
     model, tokenizer = train_model(train_df)
