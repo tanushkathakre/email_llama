@@ -56,15 +56,13 @@ def find_similar_offense(input_offense):
     # Iterate through offenses in the dataset
     for offense in data['Offense']:
         # Calculate similarity using Wu-Palmer similarity
-        synsets = wn.synsets(offense)
-        if synsets:
-            similarity = max([input_offense.path_similarity(syn) or 0 for syn in synsets])
-            if similarity > max_similarity:
-                max_similarity = similarity
-                most_similar_offense = offense
+        similarity = max([wn.wup_similarity(wn.synsets(input_offense)[0], wn.synsets(offense)[0]) or 0 
+                          for syn1 in wn.synsets(input_offense) for syn2 in wn.synsets(offense)])
+        if similarity > max_similarity:
+            max_similarity = similarity
+            most_similar_offense = offense
             
     return most_similar_offense
-
 
 # Streamlit UI
 st.title("Offense Predictor")
