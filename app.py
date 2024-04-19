@@ -11,6 +11,7 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
+from sklearn.preprocessing import LabelEncoder
 
 # Download NLTK resources
 nltk.download('punkt')
@@ -33,6 +34,10 @@ def preprocess_text(text):
     return ' '.join(tokens)
 
 data['Processed_Offense'] = data['Offense'].apply(preprocess_text)
+
+# Encode labels
+label_encoder = LabelEncoder()
+data['Section_Encoded'] = label_encoder.fit_transform(data['Section'])
 
 # Split data
 X_train, X_test, y_train, y_test = train_test_split(data['Processed_Offense'], data['Section'], test_size=0.2, random_state=42)
@@ -67,8 +72,12 @@ batch_size = 32
 # Convert data to PyTorch tensors
 X_train_tensor = torch.tensor(X_train_vec.toarray(), dtype=torch.float32)
 X_test_tensor = torch.tensor(X_test_vec.toarray(), dtype=torch.float32)
-y_train_tensor = torch.tensor(y_train.values, dtype=torch.long)
-y_test_tensor = torch.tensor(y_test.values, dtype=torch.long)
+
+# Encode labels
+y_train_encoded = label_encoder.transform(y_train)
+y_test_encoded = label_encoder.transform(y_test)
+y_train_tensor = torch.tensor(y_train_encoded, dtype=torch.long)
+y_test_tensor = torch.tensor(y_test_encoded, dtype=torch.long)
 
 # Create DataLoader
 train_data = torch.utils.data.TensorDataset(X_train_tensor, y_train_tensor)
@@ -95,7 +104,7 @@ for epoch in range(num_epochs):
 with torch.no_grad():
     outputs = model(X_test_tensor)
     _, predicted = torch.max(outputs, 1)
-    accuracy = accuracy_score(y_test_tensor.numpy(), predicted.numpy())
+    accuracy = accuracy_score(y_test_encoded, predicted.numpy())
 
 # Streamlit app
 st.title("IPC Section Prediction and Punishment Recommendation")
