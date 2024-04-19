@@ -19,6 +19,7 @@ def getLLMResponse(form_input,email_sender,email_recipient,email_style):
 
     llm = CTransformers(model='models/llama-2-7b-chat.ggmlv3.q8_0.bin',     #https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/tree/main
                     model_type='llama',
+                    token="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",
                     config={'max_new_tokens': 256,
                             'temperature': 0.01})
     
