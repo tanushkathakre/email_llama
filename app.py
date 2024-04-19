@@ -68,7 +68,7 @@ def predict(model, tokenizer, train_df, offense):
 st.title("Offense Section and Punishment Predictor")
 
 # Load CSV file
-csv_file_path = "path_to_your_dataset.csv"  # Update with the path to your CSV file
+csv_file_path = "ipc_sections.csv"  # Update with the path to your CSV file
 train_df = load_data(csv_file_path)
 
 # Train model
