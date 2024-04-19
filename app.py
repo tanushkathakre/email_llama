@@ -33,12 +33,12 @@ def predict_section_and_punishment(input_offense, data):
     predicted_punishment = None
 
     # Tokenize input offense
-    input_tokens = word_tokenize(input_offense.lower())
+    input_tokens = word_tokenize(str(input_offense).lower())
 
     # Iterate over each row in the data
     for index, row in data.iterrows():
         # Tokenize offense from the dataset
-        offense_tokens = word_tokenize(row['Offense'].lower())
+        offense_tokens = word_tokenize(str(row['Offense']).lower())
 
         # Calculate similarity between input offense and offense from the dataset
         similarity = nltk.jaccard_distance(set(input_tokens), set(offense_tokens))
@@ -50,6 +50,7 @@ def predict_section_and_punishment(input_offense, data):
             predicted_punishment = row['Punishment']
 
     return predicted_section, predicted_punishment
+
 
 
 # Streamlit UI
