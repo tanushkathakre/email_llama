@@ -1,43 +1,34 @@
 import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.pipeline import Pipeline
-from sklearn.svm import LinearSVC
 import streamlit as st
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.svm import SVC
+from sklearn.pipeline import Pipeline
+from joblib import dump, load
 
-# Load CSV data
-data = pd.read_csv("ipc_sections.csv", delimiter="\t")
+# Step 1: Data Preprocessing
+df = pd.read_csv("ipc_sections.csv", delimiter="\t")
+X = df["Offense"]
+y = df["Section"]  # Assuming you want to predict the Section based on the offense
 
-# Check the column names
-st.write("Column Names:", data.columns)
-
-# Preprocess data
-X = data['Offense']
-y_section = data['Section']
-y_punishment = data['Punishment']
-
-# Define pipeline
-pipeline_section = Pipeline([
+# Step 2: Model Training
+model = Pipeline([
     ('tfidf', TfidfVectorizer()),
-    ('clf', LinearSVC())
+    ('clf', SVC(kernel='linear'))
 ])
+model.fit(X, y)
 
-pipeline_punishment = Pipeline([
-    ('tfidf', TfidfVectorizer()),
-    ('clf', LinearSVC())
-])
+# Save the trained model
+dump(model, 'model.joblib')
 
-# Train models
-pipeline_section.fit(X, y_section)
-pipeline_punishment.fit(X, y_punishment)
+# Step 3: Streamlit App Development
+st.title("Offense Section and Punishment Predictor")
 
-# Streamlit app
-st.title("Offense Predictor")
+offense_input = st.text_area("Enter the offense:", "Type your offense here...")
 
-offense_input = st.text_input("Enter the offense description:")
-
+# Step 4: Prediction
 if st.button("Predict"):
-    predicted_section = pipeline_section.predict([offense_input])[0]
-    predicted_punishment = pipeline_punishment.predict([offense_input])[0]
-    
-    st.write("Predicted Section:", predicted_section)
-    st.write("Predicted Punishment:", predicted_punishment)
+    model = load('model.joblib')
+    predicted_section = model.predict([offense_input])
+    st.write(f"Predicted Section: {predicted_section}")
+
+    # You can implement a similar process to predict punishment based on the predicted section
