@@ -4,7 +4,7 @@ from transformers import BertTokenizer, BertForSequenceClassification
 import torch
 
 # Load CSV file
-@st.cache
+@st.cache_data
 def load_data(csv_file):
     return pd.read_csv(csv_file)
 
@@ -23,6 +23,9 @@ def train_model(train_df):
     MAX_LEN = max(len(x) for x in input_ids)
     input_ids = torch.tensor([i + [0]*(MAX_LEN-len(i)) for i in input_ids])
 
+    # Create attention mask
+    attention_mask = torch.tensor([[1] * len(input_ids[0])])
+
     # Define labels
     labels = torch.tensor(train_df['Section'].astype('category').cat.codes.values)
 
@@ -34,7 +37,7 @@ def train_model(train_df):
     model.train()
     for epoch in range(3):  # Train for 3 epochs
         optimizer.zero_grad()
-        outputs = model(input_ids, labels=labels)
+        outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
         loss = outputs.loss
         loss.backward()
         optimizer.step()
@@ -46,8 +49,9 @@ def train_model(train_df):
 def predict(model, tokenizer, train_df, offense):
     tokenized_text = tokenizer.tokenize(offense)
     input_ids = torch.tensor(tokenizer.convert_tokens_to_ids(tokenized_text)).unsqueeze(0)
+    attention_mask = torch.tensor([[1] * len(input_ids[0])])
     with torch.no_grad():
-        outputs = model(input_ids)
+        outputs = model(input_ids, attention_mask=attention_mask)
     predicted_label_idx = torch.argmax(outputs[0]).item()
     predicted_section = train_df['Section'].cat.categories[predicted_label_idx]
     predicted_punishment = train_df[train_df['Section'] == predicted_section]['Punishment'].iloc[0]
