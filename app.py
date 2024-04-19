@@ -2,8 +2,16 @@ import streamlit as st
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 # Load the tokenizer and model
-tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-hf")
-model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-2-7b-hf")
+tokenizer = AutoTokenizer.from_pretrained(
+    "meta-llama/Llama-2-7b-hf",
+     token="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"
+)
+model = AutoModelForCausalLM.from_pretrained(
+    "meta-llama/Llama-2-7b-hf",
+    # cache_dir="/data/yash/base_models",
+    # device_map='auto',
+    token="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"
+)
 
 # Streamlit app
 st.title("IPC Section Prediction and Punishment Recommendation")
