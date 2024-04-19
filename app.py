@@ -14,7 +14,7 @@ nltk.download('punkt')
 
 # Load pre-trained BERT tokenizer and model for sequence classification
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=len(data))
+model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=1)
 model.eval()
 
 # Load the CSV file
@@ -26,7 +26,7 @@ def load_data(file_path):
 data_file_path = "ipc_sections.csv"
 data = load_data(data_file_path)
 
-def predict_section_and_punishment(input_offense):
+def predict_section_and_punishment(input_offense, data):
     # Tokenize input sentence using NLTK
     input_tokens = word_tokenize(input_offense)
 
@@ -47,11 +47,11 @@ def predict_section_and_punishment(input_offense):
     with torch.no_grad():
         outputs = model(**encoded_input)
 
-    # Get predicted probabilities
-    predicted_probs = torch.sigmoid(outputs.logits)
+    # Get predicted probability
+    predicted_prob = torch.sigmoid(outputs.logits).item()
 
-    # Find the label with the highest probability
-    predicted_label = predicted_probs.argmax().item()
+    # Predicted label (0 or 1)
+    predicted_label = 1 if predicted_prob > 0.5 else 0
     
     # Get corresponding section and punishment
     predicted_section = data.loc[predicted_label, 'Section']
@@ -65,7 +65,7 @@ st.title("Offense Predictor")
 input_offense = st.text_input("Enter offense details:")
 if st.button("Predict"):
     if input_offense:
-        predicted_section, predicted_punishment = predict_section_and_punishment(input_offense)
+        predicted_section, predicted_punishment = predict_section_and_punishment(input_offense, data)
         st.write("Predicted Section:", predicted_section)
         st.write("Predicted Punishment:", predicted_punishment)
     else:
