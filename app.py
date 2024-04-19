@@ -1,40 +1,41 @@
-import streamlit as st
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.svm import SVC
 from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.svm import LinearSVC
+import streamlit as st
 
-# Load the CSV file into a DataFrame
-df = pd.read_csv('ipc_sections.csv', sep='\t')
+# Load CSV data
+data = pd.read_csv("data.csv", delimiter="\t")
 
-# Preprocess the data
-X = df['Offense']
-y_section = df['Section']
-y_punishment = df['Punishment']
+# Preprocess data
+X = data['Offense']
+y_section = data['Section']
+y_punishment = data['Punishment']
 
-# Define and train the model
-model_section = Pipeline([
+# Define pipeline
+pipeline_section = Pipeline([
     ('tfidf', TfidfVectorizer()),
-    ('svm', SVC(kernel='linear'))
+    ('clf', LinearSVC())
 ])
-model_section.fit(X, y_section)
 
-model_punishment = Pipeline([
+pipeline_punishment = Pipeline([
     ('tfidf', TfidfVectorizer()),
-    ('svm', SVC(kernel='linear'))
+    ('clf', LinearSVC())
 ])
-model_punishment.fit(X, y_punishment)
+
+# Train models
+pipeline_section.fit(X, y_section)
+pipeline_punishment.fit(X, y_punishment)
 
 # Streamlit app
-st.title('Offense Predictor')
+st.title("Offense Predictor")
 
-# Accept user input
-offense_text = st.text_input('Enter the offense text:')
+offense_input = st.text_input("Enter the offense description:")
 
-# Predict section and punishment
-if st.button('Predict'):
-    predicted_section = model_section.predict([offense_text])[0]
-    predicted_punishment = model_punishment.predict([offense_text])[0]
-
-    st.write(f'Predicted Section: {predicted_section}')
-    st.write(f'Predicted Punishment: {predicted_punishment}')
+if st.button("Predict"):
+    predicted_section = pipeline_section.predict([offense_input])[0]
+    predicted_punishment = pipeline_punishment.predict([offense_input])[0]
+    
+    st.write("Predicted Section:", predicted_section)
+    st.write("Predicted Punishment:", predicted_punishment)
