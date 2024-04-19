@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
-from transformers import BertTokenizer, BertForSequenceClassification
+from transformers import GPT2Tokenizer, GPT2ForSequenceClassification
 import torch
 import nltk
 from nltk.corpus import stopwords
@@ -38,9 +38,9 @@ data['Section_Encoded'] = label_encoder.fit_transform(data['Section'])
 # Split data
 X_train, X_test, y_train, y_test = train_test_split(data['Processed_Offense'], data['Section_Encoded'], test_size=0.2, random_state=42)
 
-# Load BERT tokenizer and model
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=len(label_encoder.classes_))
+# Load GPT-2 tokenizer and model
+tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
+model = GPT2ForSequenceClassification.from_pretrained('gpt2', num_labels=len(label_encoder.classes_))
 
 # Streamlit app
 st.title("IPC Section Prediction and Punishment Recommendation")
