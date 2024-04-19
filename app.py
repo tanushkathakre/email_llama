@@ -4,6 +4,7 @@ import torch
 from transformers import BertTokenizer, BertForSequenceClassification
 import nltk
 from nltk.tokenize import word_tokenize
+import numpy as np
 
 # Suppress warnings
 import logging
@@ -27,13 +28,9 @@ data_file_path = "ipc_sections.csv"
 data = load_data(data_file_path)
 
 def predict_section_and_punishment(input_offense, data):
-    # Tokenize input sentence using NLTK
     input_tokens = word_tokenize(input_offense)
-
-    # Convert tokens to a single string
     input_text = " ".join(input_tokens)
 
-    # Tokenize input sentence using BERT tokenizer
     encoded_input = tokenizer.encode_plus(
         input_text,
         add_special_tokens=True,
@@ -43,22 +40,20 @@ def predict_section_and_punishment(input_offense, data):
         return_tensors='pt'
     )
 
-    # Run input through BERT model
     with torch.no_grad():
         outputs = model(**encoded_input)
 
-    # Get predicted probabilities
     predicted_probs = torch.sigmoid(outputs.logits)
+    predicted_probs = predicted_probs.detach().cpu().numpy().flatten()  # Convert to numpy array
 
     # Find the index with the highest probability
-    predicted_label = torch.argmax(predicted_probs).item()
-    
+    predicted_label = np.argmax(predicted_probs)
+
     # Get corresponding section and punishment
     predicted_section = data.loc[predicted_label, 'Section']
     predicted_punishment = data.loc[predicted_label, 'Punishment']
     
     return predicted_section, predicted_punishment
-
 
 # Streamlit UI
 st.title("Offense Predictor")
