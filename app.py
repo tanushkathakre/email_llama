@@ -43,12 +43,15 @@ def predict_section_and_punishment(input_offense):
     with torch.no_grad():
         outputs = model(**encoded_input)
 
-    # Predicted label
-    predicted_label = int(torch.sigmoid(outputs.logits).round().item())
+    # Get predicted probability
+    predicted_prob = torch.sigmoid(outputs.logits).item()
+
+    # Predicted label (0 or 1)
+    predicted_label = 1 if predicted_prob > 0.5 else 0
     
     # Get corresponding section and punishment
-    predicted_section = data.iloc[predicted_label]['Section']
-    predicted_punishment = data.iloc[predicted_label]['Punishment']
+    predicted_section = data.loc[predicted_label, 'Section']
+    predicted_punishment = data.loc[predicted_label, 'Punishment']
     
     return predicted_section, predicted_punishment
 
