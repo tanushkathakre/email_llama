@@ -6,6 +6,7 @@ from transformers import BertTokenizer, BertForSequenceClassification
 from nltk.corpus import wordnet as wn
 from nltk.corpus import wordnet_ic
 nltk.download('wordnet')
+nltk.download('wordnet_ic')
 # Load WordNet and information content corpus
 wn.ensure_loaded()
 brown_ic = wordnet_ic.ic('ic-brown.dat')
