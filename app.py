@@ -47,17 +47,18 @@ def predict_section_and_punishment(input_offense, data):
     with torch.no_grad():
         outputs = model(**encoded_input)
 
-    # Get predicted probability
-    predicted_prob = torch.sigmoid(outputs.logits).item()
+    # Get predicted probabilities
+    predicted_probs = torch.sigmoid(outputs.logits)
 
-    # Predicted label (0 or 1)
-    predicted_label = 1 if predicted_prob > 0.5 else 0
+    # Find the index with the highest probability
+    predicted_label = torch.argmax(predicted_probs).item()
     
     # Get corresponding section and punishment
     predicted_section = data.loc[predicted_label, 'Section']
     predicted_punishment = data.loc[predicted_label, 'Punishment']
     
     return predicted_section, predicted_punishment
+
 
 # Streamlit UI
 st.title("Offense Predictor")
