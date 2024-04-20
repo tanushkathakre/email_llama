@@ -8,7 +8,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
 # Load data
-x_train_df = pd.read_csv("x_train.csv")
+x_train_df = pd.read_csv("X_train.csv")
 y_train_df = pd.read_csv("y_train.csv")
 
 # Preprocessing function
