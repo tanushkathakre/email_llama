@@ -5,3 +5,9 @@ streamlit
 pandas
 transformers
 torch
+accelerate
+huggingface_hub
+flask
+flask-ngrok
+pyngrok
+-U flask-cors
