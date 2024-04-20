@@ -4,8 +4,8 @@ from transformers import AutoTokenizer, pipeline
 
 # Load model and tokenizer
 model = "meta-llama/Llama-2-7b-chat-hf"
-tokenizer = AutoTokenizer.from_pretrained(model)
-summarizer = pipeline("text-generation", model=model, tokenizer=tokenizer, device=0,token="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")
+tokenizer = AutoTokenizer.from_pretrained(model,,token="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")
+summarizer = pipeline("text-generation", model=model, tokenizer=tokenizer, device=0)
 
 def generate_summary(prompt):
     # Generate summary
