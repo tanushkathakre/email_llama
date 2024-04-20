@@ -1,11 +1,26 @@
+import os
 import streamlit as st
 import torch
-from transformers import AutoTokenizer, pipeline
+from transformers import AutoTokenizer, pipeline, AutoModelForCausalLM
+
+MODEL_DIR = "llama_model"  # Directory to save the model
 
 # Load model and tokenizer
-model = "meta-llama/Llama-2-7b-chat-hf"
-tokenizer = AutoTokenizer.from_pretrained(model,token="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")
-summarizer = pipeline("text-generation", model=model, tokenizer=tokenizer, device=0,token="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")
+def load_model(model_dir):
+    if not os.path.exists(model_dir):
+        os.makedirs(model_dir)
+        # Download model and tokenizer if not already downloaded
+        tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-chat-hf")
+        tokenizer.save_pretrained(model_dir)
+        model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-2-7b-chat-hf")
+        model.save_pretrained(model_dir)
+    else:
+        tokenizer = AutoTokenizer.from_pretrained(model_dir)
+        model = AutoModelForCausalLM.from_pretrained(model_dir)
+    return model, tokenizer
+
+model, tokenizer = load_model(MODEL_DIR)
+summarizer = pipeline("text-generation", model=model, tokenizer=tokenizer, device=0)
 
 def generate_summary(prompt):
     # Generate summary
